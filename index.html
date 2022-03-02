@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poke&#769;mon Trainer | A Choose-Your-Own-Adventure Game by Angela</title>
+    <!-- FAVICON -->
+
+    <!-- FONTS -->
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="game-rules-modal">
+            <!-- this modal will appear at start of new game showing rules -->
+            <div class="modal-text"></div>
+            <h1>How to Play: Poke&#769;mon Trainer</h1>
+            <p>Here's text on how to play this game.</p>
+            <p>Press the <span>GO!</span> button to advance to the next step in the game.</p>
+            <p>Ready to play? Click START GAME below!</p>
+        </div>
+        <button id="button-start-game">START GAME</button>
+    </nav>
+    <main>
+        <section class="pokemon-section">
+            <div class="current-pokemon-box">
+                <h3 class="box-title">Current<br>Poke&#769;mon:</h3>
+                <div>
+                    <!-- starting img of mystery pokemon shape -->
+                    <img src="images/mystery-pokemon-225.png" alt="Mystery Pokemon outline" class="no-pokemon-img">
+                    <!-- these 3 imgs are hidden to start, jQuery to show element after player selects -->
+                    <img src="images/pikachu-475.png" alt="Pikachu" class="pokemon-img pikachu">
+                    <img src="images/squirtle-475.png" alt="Squirtle" class="pokemon-img squirtle">
+                    <img src="images/charmander-475.png" alt="Charmander" class="pokemon-img charmander">
+                </div>
+            </div>
+            <div class="current-skills-box">
+                <h3 class="box-title">Current<br>Skills:</h3>
+                <ul class="current-skill-list">
+                    <!-- selected skills will show here, jquery add class 'new' -->
+                    <li class="skill">Quick Attack</li>
+                    <li class="skill">Thunder Shock</li>
+                </ul>
+            </div>
+            <div class="current-stats-box">
+                <div class="current-stat titles">
+                    <h3 class="box-title">Health:</h3>
+                    <h3 class="box-title">Friendship:</h3>
+                </div>
+                <div class="current-stat num">
+                    <p class="stat-number"><span id="health">100</span></p>
+                    <p> points</p>
+                    <p class="stat-number"><span id="friend">100</span></p>
+                    <p> points</p>
+                </div>
+            </div>
+        </section>
+        <section class="gameplay-section">
+            <!-- <div class="game-img-container">  -->
+            <!-- extra: add div below with imgs, show based on user progress in game? -->
+            <!-- </div> -->
+            <div class="game-terminal-container">
+                <!-- div below for terminal text prompts -->
+                <div class="terminal-output-box">
+                    <p id="terminal-text">terminal text goes here</p>
+                </div>
+                <!-- div below for user input from prompts -->
+                <div class="player-terminal-box">
+                    <form class="player-terminal-form" action="">
+                        <label for="player-input">Player Input</label><br>
+                        <input type="text" id="player-input" name="player-input"><br>
+                        <!-- button for user to advance -->
+                        <input type="submit" value="GO!" id="button-go">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Designed & coded by Angela - 2022</p>
+        <p>Images from <a href="https://www.pokemon.com/us/pokedex/">Poke&#769;mon Poke&#769;dex</a> and <a
+                href="#">Unsplash</a>.
+        </p>
+    </footer>
+</body>
+
+</html>

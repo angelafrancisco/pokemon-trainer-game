@@ -1,0 +1,142 @@
+body, footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav {
+    padding: 5px;
+    margin: 10px;
+}
+section {
+    padding: 5px;
+}
+/* ========== RULES MODAL ========== */
+.game-rules-modal {
+    /* display: none; */
+}
+.show-rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #000000;
+    background-color: #ffffff;
+}
+/* ========== POKEMON SECTION ========== */
+.pokemon-section {
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: fit-content;
+    width: 900px;
+    border: 2px dashed #000000;
+    padding: 5px;
+    margin: 20px 0px;
+}
+.current-pokemon-box, .current-skills-box, .current-stats-box {
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+.box-title {
+    margin: 20px 10px;
+    width: fit-content;
+}
+.pokemon-img, .skill, .stat-number {
+    border: 1px solid #000000;
+}
+.no-pokemon-img {
+    width: 100px;
+}
+.pokemon-img {
+    display: none;
+    width: 100px;
+}
+/* new class added via player selection */
+.current-pokemon {
+    display: inline;
+}
+.current-skill-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+.skill {
+    margin: 10px 0px;
+    padding: 5px;
+    /* display: none; */
+}
+/* populated during gameplay, new class added via player selection */
+.new-skill {
+    display: contents;
+}
+.current-stat.titles {
+    display: block;
+    align-items: flex-end;
+}
+.current-stat.num {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+}
+.current-stat.num p {
+    margin: 5px 0px;
+    padding: 5px;
+}
+.stat-number {
+    text-align: center;
+}
+/* populated stats via game play */
+#health, #friend {
+    font-weight: 700;
+}
+/* ========== GAME PLAY SECTION ========== */
+.gameplay-section {
+    background-image: url('../images/pokemon-900-bahnijit-barman-1fZC2rYbpsU-unsplash.jpg');
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px dashed #000000;
+    height: 505px;
+    width: 900px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* contains computer output text and player input */
+.game-terminal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+}
+#terminal-text {
+    border: 2px solid #000000;
+    background-color: rgb(255, 255, 255, 0.6);
+    height: 150px;
+    width: 800px;
+    padding: 20px;
+    margin: 30px 10px;
+}
+.player-terminal-box {
+    height: fit-content;
+}
+.player-terminal-form {
+    border: 2px solid #000000;
+    background-color: rgb(255, 255, 255, 0.6);
+    padding: 20px;
+    margin: 20px 10px;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.player-terminal-form label, .player-terminal-form input {
+    margin: 5px;
+}
