@@ -1,3 +1,7 @@
+.under-construction {
+    text-align: center;
+    border: 5px dotted red;
+}
 body, footer {
     display: flex;
     flex-direction: column;
