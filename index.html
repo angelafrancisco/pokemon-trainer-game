@@ -11,7 +11,7 @@
     <!-- FONTS -->
 
     <!-- STYLES -->
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="style.css">
     <!-- SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="app.js"></script>
@@ -33,21 +33,22 @@
         <section class="pokemon-section">
             <div class="current-pokemon-box">
                 <h3 class="box-title">Current<br>Poke&#769;mon:</h3>
-                <div>
+                <div class="pokemon-img">
                     <!-- starting img of mystery pokemon shape -->
-                    <img src="images/mystery-pokemon-225.png" alt="Mystery Pokemon outline" class="no-pokemon-img">
+                    <img src="images/mystery-pokemon-225.png" alt="Mystery Pokemon outline" class="no-pokemon-img"
+                        width="100px">
                     <!-- these 3 imgs are hidden to start, jQuery to show element after player selects -->
-                    <img src="images/pikachu-475.png" alt="Pikachu" class="pokemon-img pikachu">
-                    <img src="images/squirtle-475.png" alt="Squirtle" class="pokemon-img squirtle">
-                    <img src="images/charmander-475.png" alt="Charmander" class="pokemon-img charmander">
+                    <img src="images/pikachu-475.png" alt="Pikachu" id="pikachu-img" width="100px">
+                    <img src="images/charmander-475.png" alt="Charmander" id="charmander-img" width="100px">
+                    <img src="images/squirtle-475.png" alt="Squirtle" id="squirtle-img" width="100px">
                 </div>
             </div>
             <div class="current-skills-box">
                 <h3 class="box-title">Current<br>Skills:</h3>
                 <ul class="current-skill-list">
                     <!-- selected skills will show here, jquery add class 'new' -->
-                    <li class="skill">Quick Attack</li>
-                    <li class="skill">Thunder Shock</li>
+                    <li class="skill first"></li>
+                    <li class="skill second"></li>
                 </ul>
             </div>
             <div class="current-stats-box">
@@ -56,9 +57,9 @@
                     <h3 class="box-title">Friendship:</h3>
                 </div>
                 <div class="current-stat num">
-                    <p class="stat-number"><span id="health">100</span></p>
+                    <p class="stat-number"><span id="health"></span></p>
                     <p> points</p>
-                    <p class="stat-number"><span id="friend">100</span></p>
+                    <p class="stat-number"><span id="friend"></span></p>
                     <p> points</p>
                 </div>
             </div>
@@ -70,16 +71,33 @@
             <div class="game-terminal-container">
                 <!-- div below for terminal text prompts -->
                 <div class="terminal-output-box">
-                    <p id="terminal-text">terminal text goes here</p>
+                    <div class="terminal-prompts">
+                        <p id="player-name-prompt">Welcome new Pokemon Trainer!!<br><br>What name would you like to use?
+                            Type your name in the 'Player Input' box below and click GO!</p>
+                        <p id="starter-pokemon-prompt">Time to pick your starter Pokemon!<br><br>Choose one of the
+                            following:</p>
+                        <p id="pokedex-info">You chose <span class="current-pokemon"></span>!<br><br>Pokedex data
+                            says...
+                            <span class="current-pokemon"></span> is an <span id="current-type"></span> type Pokemon!
+                            Cute!
+                        </p>
+                        <p id="train-prompt">Let's teach <span class="current-pokemon"></span> a new skill!<br><br>Which
+                            skill would you like to learn? Choose one of the following:</p>
+                    </div>
                 </div>
                 <!-- div below for user input from prompts -->
                 <div class="player-terminal-box">
-                    <form class="player-terminal-form" action="">
+                    <form id="player-terminal-form">
                         <label for="player-input">Player Input</label><br>
                         <input type="text" id="player-input" name="player-input"><br>
                         <!-- button for user to advance -->
                         <input type="submit" value="GO!" id="button-go">
                     </form>
+                    <div id="starter-pokemon-options">
+                        <button id="chose-pikachu">Pikachu</button>
+                        <button id="chose-char">Charmander</button>
+                        <button id="chose-squirtle">Squirtle</button>
+                    </div>
                 </div>
             </div>
         </section>
